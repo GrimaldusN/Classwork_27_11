@@ -15,7 +15,7 @@ public class Main {
         findPairNumber(number, 10);
         quantitySameNumbers(number);
         deleteAllSame(number);
-//        reversList(number);
+        reverseList(number);
         List<String> strings = new ArrayList<>();
         strings.add("1");
         strings.add("184");
@@ -66,14 +66,14 @@ public class Main {
         System.out.println(number);
     }
 
-//    public static void reversList(ArrayList<Integer> number){
-//        for (int i = 0; i < number.size()-1; i++) {
-//            for (int j = number.size()-1; j > 0; j--) {
-//                number.get(i) = number.get(j);/* не понимаю почему подчеркивает крастным */
-//                System.out.println(number);
-//            }
-//        }
-//    }
+    public static <T> void reverseList(List<T> list) {
+        for (int i = 0; i < list.size() / 2; i++) {
+            T temp = list.get(i);
+            list.set(i, list.get(list.size() - 1 - i));
+            list.set(list.size() - 1 - i, temp);
+        }
+        System.out.println(list);
+    }
 
     public static void deleteSame(List<String> strings, String str){
         for (int i = 0; i < strings.size(); i++) {
